@@ -1,0 +1,95 @@
+#Q1
+a1=c(5,10,15,20,25,30)
+print(a1)
+min(a1)
+max(a1)
+cat('The max is', max(a1))
+cat('The min is', min(a1))
+
+#Q2
+fact = function(){
+  no = as.integer( readline(" Input a number to find factorial : "))
+  fact = 1
+  if(no < 0) {
+    print(" The number is negative the factorial does not exist. ")
+  } else if(no == 0) {
+    print(" The factorial result is 1 ")
+  } else {
+    for( i in 1:no) {
+      fact = fact * i
+    }
+    print(paste(" The factorial result is ", no ,"is", fact ))
+  }
+}
+fact()
+
+#Q3
+
+print_fibonacci =function(no) {
+  a= 0
+  b =1
+  no=as.integer(readline("Enter a number: "))
+  cat("Fibonacci Sequence:")
+  for (i in 1:no) {
+    cat(a, " ")
+    next_num = a + b
+    a = b
+    b = next_num
+  }
+}
+print_fibonacci(no)
+
+#Q4
+
+add <- function(x, y) {
+  return(x + y)
+}
+subtract <- function(x, y) {
+  return(x - y)
+}
+multiply <- function(x, y) {
+  return(x * y)
+}
+divide <- function(x, y) {
+  return(x / y)
+}
+# take input from the user
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+choice = as.integer(readline(prompt="Enter choice[1/2/3/4]: "))
+num1 = as.integer(readline(prompt="Enter first number: "))
+num2 = as.integer(readline(prompt="Enter second number: "))
+operator <- switch(choice,"+","-","*","/")
+result <- switch(choice, add(num1, num2), subtract(num1, num2), multiply(num1, num2), divide(num1, num2))
+print(paste(num1, operator, num2, "=", result))
+#Q5
+#PLOT
+plot(1,4)
+plot(c(1,8),c(4,4))
+plot(c(1, 2, 3, 4, 5), c(3, 7, 8, 9, 12))
+plot(1:10)
+#line
+plot(1:10, type="l")
+plot(1:10, type="l", col = "blue", lwd=2)
+# barplot
+x <- c(7,2,5,6,9,1)
+barplot(x,xlab = "data",ylab = "height")
+#piechart
+x<-c(210, 450, 250, 100, 50, 90)
+names(x) <- c("Algo", "DS", "Java", "C", "C++", "Python")
+pie(x,labels = names(x), col = "pink", main = "languages", radius = -1, col.main="blue")
+#histogram 
+x <- c(21, 23, 56, 90, 20, 7, 94, 12,
+       57, 76, 69, 45, 34, 32, 49, 55, 57)
+hist(x,main="histogram", xlab = "data")
+#scatterplot
+x <- c(5,7,8,7,2,2,9,4,11,12,9,6)
+y <- c(99,86,87,88,111,103,87,94,78,77,85,86)
+plot(x,y,main="scatter plot", xlab = "dataX", ylab = "dataY")
+#boxplot
+x <- c(42, 21, 22, 24, 25, 30, 29, 22,
+       23, 23, 24, 28, 32, 45, 39, 40)
+boxplot(x,xlab="box plot", ylab="data")
