@@ -1,0 +1,48 @@
+#----LAB 7----
+#Q1
+x=rt(100,99)
+hist(x)
+
+#Q2
+rchisq(100,2)
+rchisq(100,10)
+rchisq(100,25)
+
+#Q3
+y=seq(-6,6, length=100)
+p=dt(y,1)
+q=dt(y,4)
+r=dt(y,10)
+s=dt(y,30)
+
+plot(y,s)
+df=c(1,4,10) #degree of freedom ko vector banalia
+colour=c('red','blue', 'green')
+for (i in 1:3)
+{
+  lines(y,dt(y,df[i]), col=colour[i])
+}
+
+#Q4
+#i
+#use aise qf(prob,df1,df2)
+qf(0.95, 10, 20)
+
+#ii
+pf(1.5, 10, 20)
+
+1 - pf(1.5, 10, 20)
+#or
+pf(1.5,10,20, lower.tail = F)
+
+
+#iii
+qf(0.25, 10, 20)
+qf(0.5,10,20)
+qf(0.75, 10, 20)
+
+#iv
+
+f_values = rf(1000, 10, 20)
+hist(f_values, col='green')
+
