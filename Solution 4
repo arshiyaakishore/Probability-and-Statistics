@@ -1,0 +1,52 @@
+#Q1
+x=c(0,1,2,3,4)
+px=c(0.41,.37,.16,.05,.01)
+x*px
+sum(x*px)
+weighted.mean(x,px)
+c(x%*%px)
+
+#Q2
+f1=function(t){
+  a=t*0.1*exp(-0.1*t)
+  return(a)
+}
+ex = integrate(f1,0,Inf)
+ex
+#to get without absolute error
+ex$value
+
+#Q4
+f2=function(t){
+  b=t*0.5*exp(-abs(t))
+  return(b)
+}
+ans=integrate(f2,1,10)
+ans$value #first moment
+
+f3=function(t){
+  b=t*t*0.5*exp(-abs(t))
+  return(b)
+}
+ans2=integrate(f3,1,10)
+ans2$value #second moment
+
+variance=ans2$value-(ans$value*ans$value)
+variance
+
+#Q3
+x=c(0,1,2,3)
+px=c(0.1,0.2,0.2,0.5)
+#unsold=3-x
+y=(12*x)+(2*(3-x))-18
+y
+py=px
+sum(y*py)
+
+#Q5
+#x in terms of y
+x=c(1:5)
+px=3/4*(1/4)^(x-1)
+y=x^2
+py=px
+py[3]
