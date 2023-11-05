@@ -1,0 +1,84 @@
+#Q1
+#method1
+a1=dbinom(7,12,1/6)
+a1
+a2=dbinom(8,12,1/6)
+a2
+a3=dbinom(9,12,1/6)
+a3
+a1+a2+a3
+#method2
+ans=pbinom(9,12,1/6)-pbinom(6,12,1/6)
+ans
+#method3
+diff(pbinom(c(6,9),12,1/6))
+
+#Q2
+pnorm(84,72,15.2,lower.tail = F)
+#greater than mai false karna hai
+#method2
+1-pnorm(84,72,15.2)
+
+
+#Q3
+#poisson
+#  = ke liye d and other than that p
+dpois(0,5)
+dpois(48,50)+dpois(49,50)+dpois(50,50)
+
+ppois(50,50)-ppois(47,50)
+
+#Q4
+#parts and further parts
+#hypergeometric
+# dhyper(kitne ki, wo kitne hai, uske alawa kitne hai, sample mai kitne uthaye)
+dhyper(3,17,233,5)
+#if nondef was asked
+#then
+dhyper(3,233,17,5)
+
+#Q5
+
+#b
+n=1:31
+ans1=dbinom(n,31,prob=0.447)
+ans1
+plot(1:31,ans1,type='p',col='blue')
+
+#c
+
+#Q5
+
+x=seq(0,31)
+pmf=dbinom(x,31,.447)
+plot(x,pmf)
+
+cdf=pbinom(x,31,.447)
+plot(x,cdf)
+
+mean(x)
+var(x)
+sd(x)
+
+#a Binomial DIstibution
+#b
+n= 31
+p=0.447
+
+x = 1:n
+pmf <- dbinom(x,  n,  p)
+plot(x, pmf, type = "l", lwd = 2, xlab = "Number of students using Wikipedia", ylab = "Probability", main = "Probability Mass Function (PMF)")
+
+#c
+cdf <- pbinom(x, size = n, prob = p)
+
+plot(x, cdf, type = "s", lwd = 2, xlab = "Number of students using Wikipedia", ylab = "Cumulative Probability", main = "Cumulative Distribution Function (CDF)")
+
+#d
+mean_X = n * p
+var_X = n * p * (1 - p)
+sd_X = sqrt(var_X)
+
+mean_X
+var_X
+sd_X
