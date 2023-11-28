@@ -1,0 +1,39 @@
+
+#Q1a
+ans1=1-punif(45,0,60)
+ans1
+#or
+punif(45,0,60, lower.tail = F)
+#Q1b
+ans2=punif(30,0,60)-punif(20,0,60)
+ans2
+
+
+#Q2
+#a
+dexp(3,1/2)
+#b
+x=seq(0,5,.05)
+y=dexp(x,1/2)
+plot(x,y, type='l')
+#c
+ans=pexp(3,1/2)
+ans
+#d
+cx=pexp(x,1/2)
+plot(x,cx, type='l')
+#e
+y=rexp(1000,1/2)
+plot(density(y))
+plot(y, type='l')
+
+
+#Q3a
+#alpha is shape
+#beta is scale
+pgamma(1,shape=2,scale=1/3, lower.tail = F)
+#or 
+ans3=1-pgamma(1,shape=2,scale=1/3)
+ans3
+#Q3b
+qgamma(.70,shape=2,scale=1/3)
