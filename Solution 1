@@ -93,3 +93,4 @@ plot(x,y,main="scatter plot", xlab = "dataX", ylab = "dataY")
 x <- c(42, 21, 22, 24, 25, 30, 29, 22,
        23, 23, 24, 28, 32, 45, 39, 40)
 boxplot(x,xlab="box plot", ylab="data")
+
